@@ -12,7 +12,10 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:5173", "https://your-frontend.onrender.com"],
+  credentials: true
+}));
 app.use("/api/contact", contactRoutes);
 // ----- MongoDB Connection -----
 mongoose.connect(process.env.MONGO_URI)
