@@ -5,7 +5,7 @@ import cors from 'cors';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import contactRoutes from "./routes/contact.js";
+import contactRoutes from "./routes/Contact.js";
 
 // Load env variables
 dotenv.config();
