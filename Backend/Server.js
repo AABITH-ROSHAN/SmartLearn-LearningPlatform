@@ -13,8 +13,12 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ["http://localhost:5173", "https://smart-learn-learning-platform-hlms.vercel.app/"],
-  credentials: true
+  origin: [
+  "http://localhost:5173",
+  "https://smart-learn-learning-platform-hlms.vercel.app",
+  "https://smart-learn-learning-platform-hlms-bu7abrvix.vercel.app"
+],
+credentials: true
 }));
 app.use("/api/contact", contactRoutes);
 // ----- MongoDB Connection -----
