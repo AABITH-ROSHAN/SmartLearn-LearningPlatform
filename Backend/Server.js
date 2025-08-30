@@ -16,7 +16,8 @@ app.use(cors({
   origin: [
   "http://localhost:5173",
   "https://smart-learn-learning-platform-hlms.vercel.app",
-  "https://smart-learn-learning-platform-hlms-7cqsafqz3.vercel.app"
+  "https://smart-learn-learning-platform-hlms-7cqsafqz3.vercel.app",
+  "https://smart-learn-learning-platform-hlms-i4n1okgvx.vercel.app"
 ],
 credentials: true
 }));
