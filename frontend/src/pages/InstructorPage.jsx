@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Star, BookOpen, Users, Award } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const Instructors = () => {
   const instructors = [
@@ -20,7 +21,7 @@ const Instructors = () => {
       id: 2,
       name: "Sarah Johnson",
       role: "Web Development Specialist",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b332c44c?w=300&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
       bio: "Full-stack developer and educator with expertise in modern web technologies. Previously worked at top tech companies like Google and Facebook.",
       courses: 12,
       students: 8900,
@@ -127,9 +128,12 @@ const Instructors = () => {
                   </div>
                 </div>
                 <div className="card-footer bg-transparent border-0">
-                  <button className="btn btn-outline-primary w-100 rounded-pill fw-semibold">
+                  <Link 
+                    to="/courses"
+                    className="btn btn-outline-primary w-100 rounded-pill fw-semibold"
+                  >
                     View Courses
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -139,9 +143,12 @@ const Instructors = () => {
         <div className="mt-5 p-5 text-center text-white rounded-4" style={{ background: 'linear-gradient(to right, #60a5fa, #3b82f6)' }}>
           <h2 className="fw-bold mb-3">Want to Become an Instructor?</h2>
           <p className="mb-4">Join our community of expert educators and share your knowledge with students worldwide!</p>
-          <button className="btn btn-light text-primary px-4 py-2 fw-semibold rounded-pill shadow-sm">
-            Apply to Teach
-          </button>
+          <Link 
+                    to="/courses"
+                    className="btn btn-light text-primary px-4 py-2 fw-semibold rounded-pill shadow-sm"
+                  >
+                    Apply to Teach
+                  </Link>
         </div>
       </div>
     </Layout>

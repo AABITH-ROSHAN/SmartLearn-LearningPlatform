@@ -7,7 +7,6 @@ import {
   Users,
   MessageSquare,
   User,
-  Settings,
   Bell,
   Search,
   Menu,
@@ -25,7 +24,6 @@ const Layout = ({ children }) => {
     { name: "Courses", href: "/courses", icon: BookOpen },
     { name: "Instructors", href: "/instructors", icon: Users },
     { name: "Assignments", href: "/assignments", icon: BookOpen },
-    { name: "Messages", href: "/messages", icon: MessageSquare },
     { name: "Contact", href: "/contact", icon: MessageSquare },
   ];
 
@@ -33,10 +31,6 @@ const Layout = ({ children }) => {
 
   const handleSearchClick = () => {
     navigate("/courses");
-  };
-
-  const handleNotificationClick = () => {
-    navigate("/settings#notifications");
   };
 
   const handleLogout = () => {
@@ -68,12 +62,6 @@ const Layout = ({ children }) => {
                 onClick={handleSearchClick}
               >
                 <Search size={16} />
-              </button>
-              <button
-                className="btn btn-light rounded-circle"
-                onClick={handleNotificationClick}
-              >
-                <Settings size={16} />
               </button>
               <button
                 className="btn btn-light rounded-circle"
@@ -125,7 +113,7 @@ const Layout = ({ children }) => {
               </li>
             </ul>
 
-            {/* ✅ Desktop controls (Logout removed) */}
+            {/* ✅ Desktop controls (without Settings) */}
             <div className="d-none d-md-flex align-items-center gap-3 ms-auto">
               <button
                 className="btn btn-light position-relative rounded-circle"
@@ -135,14 +123,11 @@ const Layout = ({ children }) => {
               </button>
               <button
                 className="btn btn-light position-relative rounded-circle"
-                onClick={handleNotificationClick}
+                title="Notifications"
               >
                 <Bell size={16} />
                 <span className="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
               </button>
-              <Link to="/settings" className="btn btn-light rounded-circle">
-                <Settings size={16} />
-              </Link>
               <button
                 onClick={handleLogout}
                 className="btn btn-light position-relative rounded-circle text-danger"

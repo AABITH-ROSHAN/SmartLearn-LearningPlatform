@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../App.css'; // Link your converted CSS file here
+import '../App.css'; 
 
 export default function Loginpage() {
   const [email, setEmail] = useState('');
@@ -11,11 +11,12 @@ export default function Loginpage() {
   async function handleLogin(e) {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5000/api/login', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ username: email, password }),
       });
+
 
       const data = await res.json();
       if (res.ok) {
@@ -41,9 +42,8 @@ export default function Loginpage() {
             <h1>WELCOME</h1>
             <h2>YOUR HEADLINE NAME</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam.
+              Empower your learning journey with personalized courses, assignments, and collaboration tools.  
+              Let’s continue where you left off.
             </p>
           </div>
           <div className="geometric-shape-1"></div>
@@ -54,7 +54,7 @@ export default function Loginpage() {
         <div className="form-section">
           <form className="form-container" onSubmit={handleLogin}>
             <h2>Sign in</h2>
-            <p className="form-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <p className="form-subtitle">Enter your credentials to access your personalized learning dashboard.</p>
 
             {/* Email */}
             <div className="input-group">
