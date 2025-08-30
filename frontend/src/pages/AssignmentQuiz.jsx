@@ -28,7 +28,7 @@ const AssignmentQuiz = () => {
       .then((data) => {
         const subjectQuestions = data[subject] || [];
         const filtered = subjectQuestions.filter((q) => q.level === level);
-        setQuestions(filtered);
+        setQuestions(filtered); 
       });
   }, [subject, level]);
 
