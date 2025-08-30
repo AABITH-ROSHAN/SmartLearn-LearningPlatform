@@ -23,7 +23,7 @@ const AssignmentQuiz = () => {
   const [timeLeft, setTimeLeft] = useState(300);
 
   useEffect(() => {
-    fetch("/questionpage.json") // must be inside public/
+    fetch("../Questionpage.json") // must be inside public/
       .then((res) => res.json())
       .then((data) => {
         const subjectQuestions = data[subject] || [];
