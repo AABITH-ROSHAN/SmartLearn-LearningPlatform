@@ -7,7 +7,7 @@ export default function Protected() {
   async function getProtected() {
     const token = localStorage.getItem('token');
 
-    const res = await fetch('http://localhost:5000/api/protected', {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/protected`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${token}`,
